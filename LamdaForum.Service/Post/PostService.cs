@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace LamdaForum.Service.Post
 {
@@ -43,7 +44,10 @@ namespace LamdaForum.Service.Post
 
         public Core.Models.Post GetById(int id)
         {
-            throw new NotImplementedException();
+            return _dbContext.Posts.Where(p => p.Id == id)
+                .Include(post => post.User)
+                .Include(post => post.PostReplies)
+                .Include(post => post.Forum).FirstOrDefault();
         }
 
         public IEnumerable<Core.Models.Post> GetFilteredPosts(string searchQuery)
