@@ -1,5 +1,5 @@
 ﻿using System;
-using LamdaForum.Data;
+using LamdaForum.Core;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;

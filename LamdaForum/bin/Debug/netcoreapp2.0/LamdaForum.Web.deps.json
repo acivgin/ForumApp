@@ -24,7 +24,8 @@
     ".NETCoreApp,Version=v2.0": {
       "LamdaForum.Web/1.0.0": {
         "dependencies": {
-          "LamdaForum.Data": "1.0.0",
+          "LamdaForum.Core": "1.0.0",
+          "LamdaForum.Service": "1.0.0",
           "Microsoft.AspNetCore.All": "2.0.0",
           "Microsoft.EntityFrameworkCore.Tools": "2.0.0",
           "Microsoft.NETCore.App": "2.0.0",
@@ -4634,15 +4635,26 @@
           "lib/netstandard1.3/Microsoft.WindowsAzure.Storage.dll": {}
         }
       },
-      "LamdaForum.Data/1.0.0": {
+      "LamdaForum.Core/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.All": "2.0.0"
         },
         "runtime": {
-          "LamdaForum.Data.dll": {}
+          "LamdaForum.Core.dll": {}
         },
         "compile": {
-          "LamdaForum.Data.dll": {}
+          "LamdaForum.Core.dll": {}
+        }
+      },
+      "LamdaForum.Service/1.0.0": {
+        "dependencies": {
+          "LamdaForum.Core": "1.0.0"
+        },
+        "runtime": {
+          "LamdaForum.Service.dll": {}
+        },
+        "compile": {
+          "LamdaForum.Service.dll": {}
         }
       },
       "Microsoft.NETCore.App/2.0.0": {
@@ -6957,7 +6969,12 @@
       "path": "windowsazure.storage/8.1.4",
       "hashPath": "windowsazure.storage.8.1.4.nupkg.sha512"
     },
-    "LamdaForum.Data/1.0.0": {
+    "LamdaForum.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "LamdaForum.Service/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

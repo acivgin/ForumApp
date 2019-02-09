@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using LamdaForum.Data.Models;
+using LamdaForum.Core.Models;
 
-namespace LamdaForum.Data
+namespace LamdaForum.Core
 {
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace LamdaForum.Data.Models
+namespace LamdaForum.Core.Models
 {
     public class PostReply
     {

@@ -1,5 +1,5 @@
-﻿using LamdaForum.Data;
-using LamdaForum.Data.Models;
+﻿using LamdaForum.Core;
+using LamdaForum.Core.Models;
 using LamdaForum.Web.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;

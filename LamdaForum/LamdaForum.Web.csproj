@@ -19,7 +19,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\LamdaForum.Data\LamdaForum.Data.csproj" />
+    <ProjectReference Include="..\LamdaForum.Data\LamdaForum.Core.csproj" />
+    <ProjectReference Include="..\LamdaForum.Service\LamdaForum.Service.csproj" />
   </ItemGroup>
 
 </Project>

@@ -5,7 +5,9 @@ VisualStudioVersion = 15.0.28307.329
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LamdaForum.Web", "LamdaForum\LamdaForum.Web.csproj", "{95A9A371-9811-488A-91C6-52EC288B6C6E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LamdaForum.Data", "LamdaForum.Data\LamdaForum.Data.csproj", "{F4055BA7-1398-4672-A316-3A31C8E2623E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LamdaForum.Core", "LamdaForum.Data\LamdaForum.Core.csproj", "{F4055BA7-1398-4672-A316-3A31C8E2623E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LamdaForum.Service", "LamdaForum.Service\LamdaForum.Service.csproj", "{30F0ABA0-C880-4C8E-B2D0-E18A1AE9D663}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{F4055BA7-1398-4672-A316-3A31C8E2623E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F4055BA7-1398-4672-A316-3A31C8E2623E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F4055BA7-1398-4672-A316-3A31C8E2623E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30F0ABA0-C880-4C8E-B2D0-E18A1AE9D663}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30F0ABA0-C880-4C8E-B2D0-E18A1AE9D663}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30F0ABA0-C880-4C8E-B2D0-E18A1AE9D663}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30F0ABA0-C880-4C8E-B2D0-E18A1AE9D663}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

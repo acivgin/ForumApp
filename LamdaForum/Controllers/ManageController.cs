@@ -3,7 +3,7 @@ using System.Linq;
 using System.Text;
 using System.Text.Encodings.Web;
 using System.Threading.Tasks;
-using LamdaForum.Data.Models;
+using LamdaForum.Core.Models;
 using LamdaForum.Web.Extensions;
 using LamdaForum.Web.Models.ManageViewModels;
 using LamdaForum.Web.Services;

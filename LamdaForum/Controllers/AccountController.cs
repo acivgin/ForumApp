@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Security.Claims;
 using System.Threading.Tasks;
-using LamdaForum.Data.Models;
+using LamdaForum.Core.Models;
 using LamdaForum.Web.Extensions;
 using LamdaForum.Web.Models.AccountViewModels;
 using LamdaForum.Web.Services;

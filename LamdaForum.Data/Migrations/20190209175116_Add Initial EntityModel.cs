@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.Migrations;
 using System;
 
-namespace LamdaForum.Data.Migrations
+namespace LamdaForum.Core.Migrations
 {
     public partial class AddInitialEntityModel : Migration
     {

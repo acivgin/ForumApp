@@ -5030,17 +5030,30 @@
           "lib/netstandard1.3/Microsoft.WindowsAzure.Storage.dll": {}
         }
       },
-      "LamdaForum.Data/1.0.0": {
+      "LamdaForum.Core/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.0",
         "dependencies": {
           "Microsoft.AspNetCore.All": "2.0.0"
         },
         "compile": {
-          "bin/placeholder/LamdaForum.Data.dll": {}
+          "bin/placeholder/LamdaForum.Core.dll": {}
         },
         "runtime": {
-          "bin/placeholder/LamdaForum.Data.dll": {}
+          "bin/placeholder/LamdaForum.Core.dll": {}
+        }
+      },
+      "LamdaForum.Service/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.0",
+        "dependencies": {
+          "LamdaForum.Core": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/LamdaForum.Service.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LamdaForum.Service.dll": {}
         }
       }
     }
@@ -13642,15 +13655,21 @@
         "windowsazure.storage.nuspec"
       ]
     },
-    "LamdaForum.Data/1.0.0": {
+    "LamdaForum.Core/1.0.0": {
       "type": "project",
-      "path": "../LamdaForum.Data/LamdaForum.Data.csproj",
-      "msbuildProject": "../LamdaForum.Data/LamdaForum.Data.csproj"
+      "path": "../LamdaForum.Data/LamdaForum.Core.csproj",
+      "msbuildProject": "../LamdaForum.Data/LamdaForum.Core.csproj"
+    },
+    "LamdaForum.Service/1.0.0": {
+      "type": "project",
+      "path": "../LamdaForum.Service/LamdaForum.Service.csproj",
+      "msbuildProject": "../LamdaForum.Service/LamdaForum.Service.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.0": [
-      "LamdaForum.Data >= 1.0.0",
+      "LamdaForum.Core >= 1.0.0",
+      "LamdaForum.Service >= 1.0.0",
       "Microsoft.AspNetCore.All >= 2.0.0",
       "Microsoft.EntityFrameworkCore.Tools >= 2.0.0",
       "Microsoft.NETCore.App >= 2.0.0",
@@ -13687,8 +13706,11 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "C:\\Users\\Developer\\Desktop\\ASP.NET Core 2 Projects\\LamdaForum\\LamdaForum.Data\\LamdaForum.Data.csproj": {
-              "projectPath": "C:\\Users\\Developer\\Desktop\\ASP.NET Core 2 Projects\\LamdaForum\\LamdaForum.Data\\LamdaForum.Data.csproj"
+            "C:\\Users\\Developer\\Desktop\\ASP.NET Core 2 Projects\\LamdaForum\\LamdaForum.Data\\LamdaForum.Core.csproj": {
+              "projectPath": "C:\\Users\\Developer\\Desktop\\ASP.NET Core 2 Projects\\LamdaForum\\LamdaForum.Data\\LamdaForum.Core.csproj"
+            },
+            "C:\\Users\\Developer\\Desktop\\ASP.NET Core 2 Projects\\LamdaForum\\LamdaForum.Service\\LamdaForum.Service.csproj": {
+              "projectPath": "C:\\Users\\Developer\\Desktop\\ASP.NET Core 2 Projects\\LamdaForum\\LamdaForum.Service\\LamdaForum.Service.csproj"
             }
           }
         }

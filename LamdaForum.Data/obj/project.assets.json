@@ -13032,9 +13032,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Developer\\Desktop\\ASP.NET Core 2 Projects\\LamdaForum\\LamdaForum.Data\\LamdaForum.Data.csproj",
-      "projectName": "LamdaForum.Data",
-      "projectPath": "C:\\Users\\Developer\\Desktop\\ASP.NET Core 2 Projects\\LamdaForum\\LamdaForum.Data\\LamdaForum.Data.csproj",
+      "projectUniqueName": "C:\\Users\\Developer\\Desktop\\ASP.NET Core 2 Projects\\LamdaForum\\LamdaForum.Data\\LamdaForum.Core.csproj",
+      "projectName": "LamdaForum.Core",
+      "projectPath": "C:\\Users\\Developer\\Desktop\\ASP.NET Core 2 Projects\\LamdaForum\\LamdaForum.Data\\LamdaForum.Core.csproj",
       "packagesPath": "C:\\Users\\Developer\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Developer\\Desktop\\ASP.NET Core 2 Projects\\LamdaForum\\LamdaForum.Data\\obj\\",
       "projectStyle": "PackageReference",

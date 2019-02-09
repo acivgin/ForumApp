@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace LamdaForum.Data.Models
+namespace LamdaForum.Core.Models
 {
     public class Forum
     {
