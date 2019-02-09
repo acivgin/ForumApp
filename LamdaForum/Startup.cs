@@ -1,6 +1,7 @@
 ﻿using LamdaForum.Core;
+using LamdaForum.Core.Interfaces;
 using LamdaForum.Core.Models;
-using LamdaForum.Web.Services;
+using LamdaForum.Service.Forum;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
@@ -29,9 +30,7 @@ namespace LamdaForum.Web
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
 
-            // Add application services.
-            services.AddTransient<IEmailSender, EmailSender>();
-
+            services.AddTransient<IForum, ForumService>();
             services.AddMvc();
         }
 

@@ -1,0 +1,21 @@
+﻿@model LamdaForum.Web.Models.Forum.ForumIndexModel
+
+<h2>Forums</h2>
+
+<table class="table table-hover" id="forumIndexTable">
+    <tbody>
+        @foreach (var forum in Model.ForumList)
+        {
+            <tr>
+                <td>@forum.Title</td>
+            </tr>
+            <tr>
+                <td>@forum.Description</td>
+            </tr>
+            <tr>
+                <td>@forum.Created</td>
+            </tr>
+
+        }
+    </tbody>
+</table>

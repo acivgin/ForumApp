@@ -3,14 +3,13 @@ using LamdaForum.Core.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using LamdaForum.Core;
 using Microsoft.EntityFrameworkCore;
 
 namespace LamdaForum.Service.Forum
 {
-    class ForumService : IForum
+    public class ForumService : IForum
     {
         private readonly ApplicationDbContext _dbContext;
         public ForumService(ApplicationDbContext dbContext)
