@@ -11,9 +11,10 @@ using System;
 namespace LamdaForum.Core.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20190209201715_Add ApplicationUser to PostReply table")]
+    partial class AddApplicationUsertoPostReplytable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -82,7 +83,7 @@ namespace LamdaForum.Core.Migrations
 
                     b.Property<string>("ImageUrl");
 
-                    b.Property<string>("Name");
+                    b.Property<string>("Title");
 
                     b.HasKey("Id");
 

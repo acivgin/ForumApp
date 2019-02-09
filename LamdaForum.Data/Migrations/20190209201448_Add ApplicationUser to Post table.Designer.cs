@@ -11,9 +11,10 @@ using System;
 namespace LamdaForum.Core.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20190209201448_Add ApplicationUser to Post table")]
+    partial class AddApplicationUsertoPosttable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -82,7 +83,7 @@ namespace LamdaForum.Core.Migrations
 
                     b.Property<string>("ImageUrl");
 
-                    b.Property<string>("Name");
+                    b.Property<string>("Title");
 
                     b.HasKey("Id");
 
@@ -126,13 +127,9 @@ namespace LamdaForum.Core.Migrations
 
                     b.Property<string>("Title");
 
-                    b.Property<string>("UserId");
-
                     b.HasKey("Id");
 
                     b.HasIndex("PostId");
-
-                    b.HasIndex("UserId");
 
                     b.ToTable("PostReplies");
                 });
@@ -261,10 +258,6 @@ namespace LamdaForum.Core.Migrations
                     b.HasOne("LamdaForum.Core.Models.Post", "Post")
                         .WithMany("PostReplies")
                         .HasForeignKey("PostId");
-
-                    b.HasOne("LamdaForum.Core.Models.ApplicationUser", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

@@ -12,7 +12,7 @@ namespace LamdaForum.Core.Models
 
         //public virtual ApplicationUser User { get; set; }
         public virtual Forum Forum { get; set; }
-
+        public virtual ApplicationUser User { get; set; }
         public virtual IEnumerable<PostReply> PostReplies { get; set; }
     }
 }

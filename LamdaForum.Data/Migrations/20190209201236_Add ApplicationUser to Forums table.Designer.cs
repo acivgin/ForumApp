@@ -11,9 +11,10 @@ using System;
 namespace LamdaForum.Core.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20190209201236_Add ApplicationUser to Forums table")]
+    partial class AddApplicationUsertoForumstable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -82,9 +83,13 @@ namespace LamdaForum.Core.Migrations
 
                     b.Property<string>("ImageUrl");
 
-                    b.Property<string>("Name");
+                    b.Property<string>("Title");
+
+                    b.Property<string>("UserId");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Forums");
                 });
@@ -102,13 +107,9 @@ namespace LamdaForum.Core.Migrations
 
                     b.Property<string>("Title");
 
-                    b.Property<string>("UserId");
-
                     b.HasKey("Id");
 
                     b.HasIndex("ForumId");
-
-                    b.HasIndex("UserId");
 
                     b.ToTable("Posts");
                 });
@@ -126,13 +127,9 @@ namespace LamdaForum.Core.Migrations
 
                     b.Property<string>("Title");
 
-                    b.Property<string>("UserId");
-
                     b.HasKey("Id");
 
                     b.HasIndex("PostId");
-
-                    b.HasIndex("UserId");
 
                     b.ToTable("PostReplies");
                 });
@@ -245,15 +242,18 @@ namespace LamdaForum.Core.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
+            modelBuilder.Entity("LamdaForum.Core.Models.Forum", b =>
+                {
+                    b.HasOne("LamdaForum.Core.Models.ApplicationUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId");
+                });
+
             modelBuilder.Entity("LamdaForum.Core.Models.Post", b =>
                 {
                     b.HasOne("LamdaForum.Core.Models.Forum", "Forum")
                         .WithMany("Posts")
                         .HasForeignKey("ForumId");
-
-                    b.HasOne("LamdaForum.Core.Models.ApplicationUser", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId");
                 });
 
             modelBuilder.Entity("LamdaForum.Core.Models.PostReply", b =>
@@ -261,10 +261,6 @@ namespace LamdaForum.Core.Migrations
                     b.HasOne("LamdaForum.Core.Models.Post", "Post")
                         .WithMany("PostReplies")
                         .HasForeignKey("PostId");
-
-                    b.HasOne("LamdaForum.Core.Models.ApplicationUser", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

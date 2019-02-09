@@ -21,7 +21,7 @@ namespace LamdaForum.Web.Controllers
                 .Select(forum => new ForumListingModel
                 {
                     Id = forum.Id,
-                    Title = forum.Title,
+                    Title = forum.Name,
                     Description = forum.Description,
                     Created = forum.Created
                 });
@@ -29,6 +29,12 @@ namespace LamdaForum.Web.Controllers
             var forumModel = new ForumIndexModel { ForumList = forums };
 
             return View(forumModel);
+        }
+
+        public IActionResult Topic(int id)
+        {
+            var forum = _forumService.GetById(id);
+            return View(forum);
         }
     }
 }
