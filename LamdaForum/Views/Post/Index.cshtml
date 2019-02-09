@@ -1,1 +1,27 @@
 ﻿@model LamdaForum.Web.Models.Posts.PostIndexModel
+
+
+<h1>@Model.Title</h1>
+
+<div>
+    Author: @Model.AuthoName (@Model.AuthoRating)
+    Created: @Model.Created
+</div>
+
+<div>
+    @Model.PostContent
+</div>
+
+@if (Model.PostReplies.Any())
+{
+    foreach (var reply in Model.PostReplies)
+    {
+        <div>
+            Reply Author: @reply.AuthorName
+            Reply Created: @reply.Created
+        </div>
+        <div>
+            Reply: @reply.ReplyContent
+        </div>
+    }
+}

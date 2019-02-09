@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
 using LamdaForum.Core.Interfaces;
 using LamdaForum.Core.Models;
 using LamdaForum.Web.Models.Posts;
@@ -45,12 +46,18 @@ namespace LamdaForum.Web.Controllers
             {
                 Id = reply.Id,
                 Title = reply.Title,
-                AuthoName = reply.User.UserName,
+                AuthorName = reply.User.UserName,
                 AuthorImageUrl = reply.User.ProfileImageUrl,
                 AuthoRating = reply.User.Rating,
                 Created = reply.Created,
                 ReplyContent = reply.Content
             });
+        }
+
+        [HttpPost]
+        public IActionResult Create(PostIndexModel postIndexModel)
+        {
+            return null;
         }
     }
 }
