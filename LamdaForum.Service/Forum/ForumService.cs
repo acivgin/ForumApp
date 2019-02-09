@@ -40,13 +40,9 @@ namespace LamdaForum.Service.Forum
         public Core.Models.Forum GetById(int id)
         {
             var forum = _dbContext.Forums.Where(f => f.Id == id)
-                .Include(f => f.Posts)
-                .ThenInclude(p => p.User)
-                .Include(f => f.Posts)
-                .ThenInclude(p => p.PostReplies).First();
-
-            if (forum == null)
-                return new Core.Models.Forum();
+                .Include(f => f.Posts).ThenInclude(p => p.User)
+                .Include(f => f.Posts).ThenInclude(p => p.PostReplies).ThenInclude(r => r.User)
+                .FirstOrDefault();
 
             return forum;
         }
