@@ -2,6 +2,7 @@
 using LamdaForum.Core.Interfaces;
 using LamdaForum.Core.Models;
 using LamdaForum.Service.Forum;
+using LamdaForum.Service.Post;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
@@ -31,6 +32,7 @@ namespace LamdaForum.Web
                 .AddDefaultTokenProviders();
 
             services.AddTransient<IForum, ForumService>();
+            services.AddTransient<IPost, PostService>();
             services.AddMvc();
         }
 

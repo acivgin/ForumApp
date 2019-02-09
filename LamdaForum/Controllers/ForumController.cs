@@ -39,24 +39,43 @@ namespace LamdaForum.Web.Controllers
         public IActionResult Topic(int id)
         {
             var forum = _forumService.GetById(id);
-            var posts = _postService.GetPostsByForum(id);
+            var posts = forum.Posts;
 
             var postListings = posts.Select(post => new PostListingModel
             {
                 Id = post.Id,
                 AuthorId = post.User.Id,
-                Title =  post.Title,
+                AuthorRating = post.User.Rating,
+                AuthorName = post.User.UserName,
+                Title = post.Title,
                 DatePosted = post.Created.ToString(),
                 RepliesCount = post.PostReplies.Count(),
-                Forum = BuildForulmListing(post)
+                Forum = BuildForumListing(post)
             });
 
-            return View(forum);
+            var model = new ForumTopicModel
+            {
+                Posts = postListings,
+                Forum = BuildForumListing(forum)
+            };
+
+            return View(model);
         }
 
-        private ForumListingModel BuildForulmListing(Post post)
+        private ForumListingModel BuildForumListing(Post post)
         {
-            throw new NotImplementedException();
+            return BuildForumListing(post.Forum);
+        }
+
+        private ForumListingModel BuildForumListing(Core.Models.Forum forum)
+        {
+            return new ForumListingModel
+            {
+                Id = forum.Id,
+                Title = forum.Name,
+                Description = forum.Description,
+                ImageUrl = forum.ImageUrl
+            };
         }
     }
 }
