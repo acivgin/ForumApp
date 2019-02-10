@@ -11,9 +11,10 @@ using System;
 namespace LamdaForum.Core.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20190210111247_Mrs u picku")]
+    partial class Mrsupicku
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -130,7 +131,7 @@ namespace LamdaForum.Core.Migrations
 
                     b.Property<DateTime>("Created");
 
-                    b.Property<int>("PostId");
+                    b.Property<int?>("PostId");
 
                     b.Property<string>("Title");
 
@@ -269,8 +270,7 @@ namespace LamdaForum.Core.Migrations
                 {
                     b.HasOne("LamdaForum.Core.Models.Post", "Post")
                         .WithMany("PostReplies")
-                        .HasForeignKey("PostId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("PostId");
 
                     b.HasOne("LamdaForum.Core.Models.ApplicationUser", "User")
                         .WithMany()

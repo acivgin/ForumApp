@@ -19,7 +19,8 @@ namespace LamdaForum.Service.Post
 
         public Task Add(Core.Models.Post post)
         {
-            throw new NotImplementedException();
+            _dbContext.Posts.Add(post);
+            return _dbContext.SaveChangesAsync();
         }
 
         public Task AddReply(PostReply postReply)
