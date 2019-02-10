@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
 using System.Threading.Tasks;
 using LamdaForum.Core.Interfaces;
 using LamdaForum.Core.Models;
@@ -9,7 +8,6 @@ using LamdaForum.Web.Models.Posts;
 using LamdaForum.Web.Models.Reply;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using NuGet.Frameworks;
 
 namespace LamdaForum.Web.Controllers
 {
@@ -88,14 +86,15 @@ namespace LamdaForum.Web.Controllers
 
             await _postService.Add(post);
 
-            return RedirectToAction("Index", "Post", new { id = post.Id });
+            return RedirectToAction("Topic", "Forum", new { id = post.Forum.Id });
         }
 
         private Post BuildPost(NewPostModel postIndexModel, ApplicationUser user)
         {
+            var forum = _forumService.GetById(postIndexModel.ForumID);
             return new Post
             {
-                ForumId = postIndexModel.ForumID,
+                Forum = forum,
                 Title = postIndexModel.Title,
                 Content = postIndexModel.Content,
                 Created = DateTime.Now,

@@ -11,6 +11,5 @@ namespace LamdaForum.Core.Models
 
         public virtual ApplicationUser User { get; set; }
         public virtual Post Post { get; set; }
-        public virtual int PostId { get; set; }
     }
 }

@@ -4,6 +4,9 @@
 
 @if (Model.Posts.Any())
 {
+    <span class="headingBtn row">
+        <a asp-controller="Post" asp-action="Create" asp-route-id="@Model.Forum.Id" class="btn btn-primary">Create New Post</a>
+    </span>
     <table class="table table-hover table-bordered table-responsive">
         <tbody>
             @foreach (var post in Model.Posts)
