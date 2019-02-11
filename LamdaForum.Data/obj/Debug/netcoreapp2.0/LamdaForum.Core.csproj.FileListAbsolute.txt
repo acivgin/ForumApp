@@ -14,4 +14,3 @@ C:\Users\XPS\Desktop\ASP.NET Core 2.0 Projects\ForumApp\LamdaForum.Data\obj\Debu
 C:\Users\XPS\Desktop\ASP.NET Core 2.0 Projects\ForumApp\LamdaForum.Data\obj\Debug\netcoreapp2.0\LamdaForum.Core.AssemblyInfo.cs
 C:\Users\XPS\Desktop\ASP.NET Core 2.0 Projects\ForumApp\LamdaForum.Data\obj\Debug\netcoreapp2.0\LamdaForum.Core.dll
 C:\Users\XPS\Desktop\ASP.NET Core 2.0 Projects\ForumApp\LamdaForum.Data\obj\Debug\netcoreapp2.0\LamdaForum.Core.pdb
-C:\Users\XPS\Desktop\ASP.NET Core 2.0 Projects\ForumApp\LamdaForum.Data\obj\Debug\netcoreapp2.0\LamdaForum.Core.csprojAssemblyReference.cache

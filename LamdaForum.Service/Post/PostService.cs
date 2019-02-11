@@ -40,7 +40,10 @@ namespace LamdaForum.Service.Post
 
         public IEnumerable<Core.Models.Post> GetAll()
         {
-            throw new NotImplementedException();
+            return _dbContext.Posts
+                .Include(p => p.Forum)
+                .Include(u => u.User)
+                .Include(r => r.PostReplies);
         }
 
         public Core.Models.Post GetById(int id)
@@ -59,6 +62,11 @@ namespace LamdaForum.Service.Post
         public IEnumerable<Core.Models.Post> GetPostsByForum(int id)
         {
             return _dbContext.Forums.Where(forum => forum.Id == id).First().Posts;
+        }
+
+        public IEnumerable<Core.Models.Post> GetLatestPosts(int number)
+        {
+            return GetAll().OrderByDescending(post => post.Created).Take(number);
         }
     }
 }
