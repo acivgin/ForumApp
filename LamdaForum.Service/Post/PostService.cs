@@ -41,9 +41,9 @@ namespace LamdaForum.Service.Post
         public IEnumerable<Core.Models.Post> GetAll()
         {
             return _dbContext.Posts
-                .Include(p => p.Forum)
-                .Include(u => u.User)
-                .Include(r => r.PostReplies);
+                .Include(post => post.User)
+                .Include(post => post.PostReplies).ThenInclude(reply => reply.User)
+                .Include(post => post.Forum)
         }
 
         public Core.Models.Post GetById(int id)
