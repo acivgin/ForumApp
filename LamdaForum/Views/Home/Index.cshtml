@@ -7,9 +7,9 @@
     <div class="row frontPageSplash">
         <div class="col-md-6 frontPageLearn">
             <div class="frontPageHeading">Learn, Collaborate, Share Knowledge</div>
-            <p>Lambda Forums is the world's fastest growing coding forum !</p>
-            <div>
-                <form asp-controller="Search" asp-action="Search" method="post">
+            <p class="frontPageSubHeading">Lambda Forums is the world's fastest growing coding forum !</p>
+            <div class="search__container">
+                <form asp-controller="Search" asp-action="Search" method="post" class="search-form">
                     <input asp-for="SearchQuery" type="text" class="homeSearch" placeholder="Search...." />
                 </form>
             </div>
@@ -21,7 +21,7 @@
     </div>
     <div class="row frontPageContent">
         <h3 id="latestPosts">Latest Posts</h3>
-        <table>
+        <table class="table tab-content table-hover">
             <tbody>
                 @foreach (var post in Model.LatestPosts)
                 {
