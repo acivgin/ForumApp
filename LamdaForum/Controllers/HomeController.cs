@@ -14,12 +14,18 @@ namespace LamdaForum.Web.Controllers
     {
         private readonly IPost _postService;
         private readonly IForum _forumService;
+
         public HomeController(IPost postService)
         {
             _postService = postService;
         }
 
         public IActionResult Index()
+        {
+            return View(BuildHomeIndexModel());
+        }
+
+        private HomeIndexModel BuildHomeIndexModel()
         {
             var latestPosts = _postService.GetLatestPosts(10);
 
@@ -40,7 +46,7 @@ namespace LamdaForum.Web.Controllers
                 SearchQuery = "",
                 LatestPosts = posts
             };
-            return View(model);
+            return model;
         }
 
         private ForumListingModel BuildForumForPost(Post post)
