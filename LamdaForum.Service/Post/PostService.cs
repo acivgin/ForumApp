@@ -43,7 +43,7 @@ namespace LamdaForum.Service.Post
             return _dbContext.Posts
                 .Include(post => post.User)
                 .Include(post => post.PostReplies).ThenInclude(reply => reply.User)
-                .Include(post => post.Forum)
+                .Include(post => post.Forum);
         }
 
         public Core.Models.Post GetById(int id)

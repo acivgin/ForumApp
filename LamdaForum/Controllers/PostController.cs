@@ -77,7 +77,7 @@ namespace LamdaForum.Web.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(NewPostModel postIndexModel)
+        public async Task<IActionResult> AddPost(NewPostModel postIndexModel)
         {
             var userId = _userManager.GetUserId(User);
             var user = await _userManager.FindByIdAsync(userId);
@@ -86,7 +86,7 @@ namespace LamdaForum.Web.Controllers
 
             await _postService.Add(post);
 
-            return RedirectToAction("Topic", "Forum", new { id = post.Forum.Id });
+            return RedirectToAction("Index", "Post", new { id = post.Id });
         }
 
         private Post BuildPost(NewPostModel postIndexModel, ApplicationUser user)
@@ -94,11 +94,11 @@ namespace LamdaForum.Web.Controllers
             var forum = _forumService.GetById(postIndexModel.ForumID);
             return new Post
             {
-                Forum = forum,
                 Title = postIndexModel.Title,
                 Content = postIndexModel.Content,
                 Created = DateTime.Now,
-                User = user
+                User = user,
+                Forum = forum
             };
         }
     }
